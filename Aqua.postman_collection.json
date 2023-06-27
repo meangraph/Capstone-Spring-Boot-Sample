@@ -1,0 +1,452 @@
+{
+	"info": {
+		"_postman_id": "6da6948f-4efb-4c5f-b4ce-4b1a681a0fd7",
+		"name": "Aqua",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22691221",
+		"_collection_link": "https://red-zodiac-112547.postman.co/workspace/My-Workspace~af5b8f1a-69d5-4845-8994-2372fe73d6e1/collection/22691221-6da6948f-4efb-4c5f-b4ce-4b1a681a0fd7?action=share&creator=22691221&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "TestAPI",
+			"item": [
+				{
+					"name": "Get Request (Read)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/read",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create (POST)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/create/goodbye, world!",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"create",
+								"goodbye, world!"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update (PUT)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/update/something, world?",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"update",
+								"something, world"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete String (DELETE)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Test Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/generate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"generate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Create Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Brendan\",\r\n  \"lastName\": \"Alderton\",\r\n  \"phoneNumber\": \"0400000000\",\r\n  \"description\": \"A new student at our university\",\r\n  \"dob\": \"1992-11-20\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/student/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Student By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/student/getByID/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"getByID",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find all students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/student/findAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"findAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"phoneNumber\": \"0411111111\",\r\n  \"description\": \"A returning student at our university\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/student/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subject",
+			"item": [
+				{
+					"name": "Create Subject",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subjectCode\":\"CSCI321\",\r\n    \"credits\":12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subject/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subject",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Subject",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"credits\":11\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subject/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subject",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Subject by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/subject/getByID/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subject",
+								"getByID",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Subjects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/subject/findAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subject",
+								"findAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Enrollment",
+			"item": [
+				{
+					"name": "Create Enrollment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"student\": {\r\n        \"studentID\": 1\r\n    },\r\n    \"subject\": {\r\n        \"id\": 1\r\n    },\r\n    \"grade\": 0\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/enrollment/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"enrollment",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Defer Enrollment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/enrollment/defer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"enrollment",
+								"defer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Enrollments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/enrollment/findAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"enrollment",
+								"findAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Enrollments By Subject ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/enrollment/findBySubject/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"enrollment",
+								"findBySubject",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Complete an enrollment with a mark",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/enrollment/finishSubject/1/90",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"enrollment",
+								"finishSubject",
+								"1",
+								"90"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
