@@ -8,6 +8,7 @@ import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.beans.Introspector;
+import java.util.Arrays;
 import java.util.Set;
 
 // A service class for updating entities
@@ -36,6 +37,12 @@ public class EntityUpdateService {
                     Set newSet = (Set) newValue;
                     oldSet.addAll(newSet); // Merge the old and new sets
                 }
+                // If the property is another entity, recursively call partialUpdate
+                else if (Arrays.stream(newValue.getClass().getAnnotations())
+                        .anyMatch(annotation -> annotation.annotationType().getSimpleName().equals("Entity"))) {
+                    Object oldNestedEntity = descriptor.getReadMethod().invoke(oldEntity);
+                    partialUpdate(oldNestedEntity, newValue);
+                }
                 // For other property types, replace the old value with the new one
                 else {
                     BeanUtils.setProperty(oldEntity, fieldName, newValue);
@@ -47,4 +54,5 @@ public class EntityUpdateService {
         return oldEntity;
     }
 }
+
 
